@@ -1,10 +1,6 @@
 // Edit this file to add, remove, or modify learning resources.
 // The UI, cards, search, categories, and responsive layout are generated automatically.
 
-//
-//
-//
-//
 
 const siteOwner = "iReally";
 
@@ -12,8 +8,9 @@ const categories = [
   "Python",
   "AI / ML",
   "Tools",
-  "DSA",
   "AI",
+  "DevOps & Clouds",
+  "DSA",
   "Misc",
   "Web Development",
   "Computer Science"
@@ -51,6 +48,12 @@ const websites = [
     description: "Seaborn Documentation",
   },
   {
+    name: "Jupyter",
+    url: "https://docs.jupyter.org/en/latest/",
+    category: "Python",
+    description: "Jupyter Documentation",
+  },
+  {
     name: "Python Tutor",
     url: "https://pythontutor.com/",
     category: "Python",
@@ -66,13 +69,19 @@ const websites = [
     name: "Scikit-learn",
     url: "https://scikit-learn.org",
     category: "AI / ML",
-    description: "Machine learning tools",
+    description: "Machine learning tool",
   },
   {
     name: "PyTorch",
     url: "https://docs.pytorch.org/docs/2.14/",
     category: "AI / ML",
-    description: "Machine learning tools",
+    description: "Pytorch Documentation",
+  },
+  {
+    name: "Kaggle",
+    url: "https://www.kaggle.com/docs",
+    category: "AI / ML",
+    description: "Kaggle Documentation",
   },
   {
     name: "Hugging Face",
@@ -98,6 +107,18 @@ const websites = [
     url: "https://devdocs.io",
     category: "Tools",
     description: "Developer documentation",
+  },
+  {
+    name: "Docker",
+    url: "https://docs.docker.com/",
+    category: "DevOps & Clouds",
+    description: "Docker documentation",
+  },
+  {
+    name: "Kubernetes",
+    url: "https://kubernetes.io/docs/home/",
+    category: "DevOps & Clouds",
+    description: "Kubernetes documentation",
   },
   {
     name: "LeetCode",
