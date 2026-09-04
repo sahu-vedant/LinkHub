@@ -25,7 +25,7 @@ const websites = [
   },
   {
     name: "Pandas",
-    url: "https://pandas.pydata.org",
+    url: "https://pandas.pydata.org/docs/",
     category: "Python",
     description: "Pandas Documentation",
   },
