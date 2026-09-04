@@ -109,6 +109,12 @@ const websites = [
     description: "Developer documentation",
   },
   {
+    name: "DeepSeek",
+    url: "https://chat.deepseek.com/",
+    category: "AI",
+    description: "DeepSeek",
+  },
+  {
     name: "Docker",
     url: "https://docs.docker.com/",
     category: "DevOps & Clouds",
