@@ -1,12 +1,11 @@
 // Edit this file to add, remove, or modify learning resources.
 // The UI, cards, search, categories, and responsive layout are generated automatically.
 
-
 const siteOwner = "iReally";
 
 const categories = [
   "Python",
-  "AI / ML",
+  "AI / ML & Data Science",
   "Tools",
   "AI",
   "DevOps & Clouds",
@@ -68,27 +67,34 @@ const websites = [
   {
     name: "Scikit-learn",
     url: "https://scikit-learn.org",
-    category: "AI / ML",
+    category: "AI / ML & Data Science",
     description: "Machine learning tool",
   },
   {
     name: "PyTorch",
     url: "https://docs.pytorch.org/docs/2.14/",
-    category: "AI / ML",
+    category: "AI / ML & Data Science",
     description: "Pytorch Documentation",
   },
   {
     name: "Kaggle",
     url: "https://www.kaggle.com/docs",
-    category: "AI / ML",
+    category: "AI / ML & Data Science",
     description: "Kaggle Documentation",
   },
   {
     name: "Hugging Face",
     url: "https://huggingface.co",
-    category: "AI / ML",
+    category: "AI / ML & Data Science",
     description: "AI models and datasets",
     logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+  },
+  {
+    name: "Data Science ChaiCode",
+    url: "https://datascience.chaicode.com/",
+    category: "AI / ML & Data Science",
+    description: "Data Science Visual",
+    // logo: "",
   },
   {
     name: "GitHub",
@@ -135,6 +141,12 @@ const websites = [
   {
     name: "VisuAlgo",
     url: "https://visualgo.net",
+    category: "DSA",
+    description: "Visualize algorithms",
+  },
+  {
+    name: "DSA ChaiCode",
+    url: "https://dsa.chaicode.com/",
     category: "DSA",
     description: "Visualize algorithms",
   },
