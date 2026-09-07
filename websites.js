@@ -101,6 +101,7 @@ const websites = [
     url: "https://github.com",
     category: "Tools",
     description: "Code and collaboration",
+    favourite: true,   // <-- marked as favourite initially
   },
   {
     name: "Stack Overflow",
@@ -119,6 +120,7 @@ const websites = [
     url: "https://chat.deepseek.com/",
     category: "AI",
     description: "DeepSeek",
+    favourite: true,   // <-- also favourite
   },
   {
     name: "Docker",
