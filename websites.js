@@ -27,6 +27,7 @@ const websites = [
     url: "https://pandas.pydata.org/docs/",
     category: "Python",
     description: "Pandas Documentation",
+    favourite: true,
   },
   {
     name: "NumPy",
@@ -101,7 +102,7 @@ const websites = [
     url: "https://github.com",
     category: "Tools",
     description: "Code and collaboration",
-    favourite: true,   // <-- marked as favourite initially
+    favourite: false,   // <-- marked as favourite initially
   },
   {
     name: "Stack Overflow",
@@ -139,18 +140,21 @@ const websites = [
     url: "https://leetcode.com",
     category: "DSA",
     description: "Practice coding",
+    favourite: true,
   },
   {
     name: "VisuAlgo",
     url: "https://visualgo.net",
     category: "DSA",
     description: "Visualize algorithms",
+    favourite: true,
   },
   {
     name: "DSA ChaiCode",
     url: "https://dsa.chaicode.com/",
     category: "DSA",
     description: "Visualize algorithms",
+    favourite: true,
   },
   {
     name: "Typing",
