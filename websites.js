@@ -6,10 +6,10 @@ const siteOwner = "iReally";
 const categories = [
   "Python",
   "AI / ML & Data Science",
-  "Tools",
-  "AI",
-  "DevOps & Clouds",
   "DSA",
+  "AI",
+  "Tools",
+  "DevOps & Clouds",
   "Misc",
   "Web Development",
   "Computer Science"
