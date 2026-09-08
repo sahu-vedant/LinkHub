@@ -140,6 +140,7 @@ const websites = [
     url: "https://leetcode.com",
     category: "DSA",
     description: "Practice coding",
+    logo: "https://assets.leetcode.com/static_assets/public/images/LeetCode_logo_rvs.png",
     favourite: true,
   },
   {
