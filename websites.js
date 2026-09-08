@@ -40,7 +40,7 @@ const websites = [
     url: "https://matplotlib.org/stable/index.html",
     category: "Python",
     description: "Matplotlib Documentation",
-    logo: "https://matplotlib.org/stable/_static/logo_dark.svg",
+    logo: "https://matplotlib.org/stable/_images/sphx_glr_logos2_001.png",
   },
   {
     name: "Seaborn",
