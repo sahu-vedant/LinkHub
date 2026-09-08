@@ -96,7 +96,7 @@ const websites = [
     url: "https://datascience.chaicode.com/",
     category: "AI / ML & Data Science",
     description: "Data Science Visual",
-    // logo: "",
+    logo: "https://datascience.chaicode.com/chai-mascot.png",
   },
   {
     name: "GitHub",
