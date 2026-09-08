@@ -290,7 +290,7 @@ function handleCardClick(e) {
         setTimeout(() => {
             if (loader) loader.classList.remove('active');
         }, 100);
-    }, 1000);
+    }, 700);
 }
 
 function smoothReRender() {
