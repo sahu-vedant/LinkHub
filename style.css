@@ -40,7 +40,6 @@
     --scrollbar-thumb-hover: rgba(255, 255, 255, 0.25);
     --cursor-color: #b8b8b8;
     --cursor-glow: rgba(107, 140, 255, 0.2);
-    --category-accent-base: 220; /* hue for category accent, shifted per category */
 }
 
 /* Light theme overrides */
@@ -90,17 +89,12 @@ body {
     margin: 0;
     padding: 20px;
     transition: background 0.4s ease;
-    cursor: none; /* custom cursor active */
+    cursor: none;
 }
 
-/* Disable custom cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
-    body {
-        cursor: auto !important;
-    }
-    #cursorTrail {
-        display: none !important;
-    }
+    body { cursor: auto !important; }
+    #cursorTrail { display: none !important; }
 }
 
 /* ----- SCROLLBAR ----- */
@@ -130,41 +124,30 @@ body {
     height: 100%;
     overflow: visible;
 }
-
 .cursor-dot {
     position: absolute;
     border-radius: 50%;
     background: var(--cursor-color);
-    opacity: 0.6;
     transform: translate(-50%, -50%);
     will-change: transform;
     transition: opacity 0.15s ease;
     box-shadow: 0 0 6px var(--cursor-glow);
 }
-
 .cursor-dot-main {
     width: 14px;
     height: 14px;
-    background: var(--cursor-color);
     opacity: 0.9;
     box-shadow: 0 0 16px var(--cursor-glow), 0 0 4px var(--cursor-color);
 }
-
 .cursor-dot-trail {
     width: 6px;
     height: 6px;
     opacity: 0.3;
-    transition: opacity 0.3s ease;
 }
 
-/* Hide cursor when reduced-motion is preferred */
 @media (prefers-reduced-motion: reduce) {
-    #cursorTrail {
-        display: none !important;
-    }
-    body {
-        cursor: auto !important;
-    }
+    #cursorTrail { display: none !important; }
+    body { cursor: auto !important; }
 }
 
 /* ----- HEADER ----- */
@@ -180,7 +163,7 @@ body {
     border: 1px solid var(--card-border);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     margin-bottom: 32px;
-    transition: background 0.3s ease, border-color 0.3s ease;
+    transition: background 0.3s, border-color 0.3s;
 }
 
 .site-owner {
@@ -196,7 +179,6 @@ body {
     gap: 12px;
 }
 
-/* Theme toggle */
 .theme-toggle {
     width: 40px;
     height: 40px;
@@ -218,14 +200,13 @@ body {
     transform: rotate(20deg);
 }
 .theme-toggle .theme-icon {
-    transition: transform 0.6s ease;
     display: inline-block;
+    transition: transform 0.6s ease;
 }
 .theme-toggle.rotated .theme-icon {
     transform: rotate(360deg);
 }
 
-/* Search */
 .search-wrapper {
     display: flex;
     align-items: center;
@@ -314,7 +295,7 @@ body {
     margin-top: 8px;
 }
 
-/* ----- CATEGORY SECTION ----- */
+/* ----- CATEGORY ----- */
 .category-section {
     opacity: 0;
     animation: fadeInUp 0.5s ease forwards;
@@ -353,23 +334,21 @@ body {
     transition: all 0.3s ease;
     display: inline-block;
 }
-
 .category-count.pop {
     animation: popBadge 0.3s ease;
 }
 
-/* ----- CARDS GRID ----- */
+/* ----- CARDS GRID (smaller cards) ----- */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
     transition: opacity 0.3s ease;
 }
-
 @media (max-width: 480px) {
     .cards-grid {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
     }
 }
 
@@ -383,23 +362,24 @@ body {
     border: 1px solid var(--card-border);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
-    transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+    transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1),
+                box-shadow 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 16px 10px;
+    padding: 12px 8px;
     cursor: none;
     text-decoration: none;
     color: var(--text-primary);
-    will-change: transform, box-shadow, border-color, background;
+    will-change: transform, box-shadow;
     opacity: 0;
     transform: translateY(16px) scale(0.96);
     animation: cardAppear 0.4s ease forwards;
 }
-
-/* Staggered appearance */
 .card:nth-child(1) { animation-delay: 0.02s; }
 .card:nth-child(2) { animation-delay: 0.04s; }
 .card:nth-child(3) { animation-delay: 0.06s; }
@@ -422,35 +402,34 @@ body {
 .card:nth-child(20) { animation-delay: 0.40s; }
 .card:nth-child(n+21) { animation-delay: 0.42s; }
 
+/* ---- Uplifting hover effect (enhanced) ---- */
 .card:hover {
-    transform: translateY(-6px) scale(1.02);
+    transform: translateY(-8px) scale(1.03);
     background: var(--card-hover-border);
     border-color: var(--card-hover-border);
-    box-shadow: var(--card-hover-shadow);
+    box-shadow: var(--card-hover-shadow), 0 0 20px var(--accent-glow);
 }
 .card:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
-
-/* Hide card when filtered out */
 .card.hidden {
     display: none;
 }
 
-/* Card content */
+/* Card content - sized for smaller cards */
 .card-logo {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: var(--card-bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
@@ -468,8 +447,7 @@ body {
 }
 .card-logo .logo-placeholder {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    inset: 0;
     background: linear-gradient(135deg, var(--card-border), var(--card-bg));
     background-size: 200% 200%;
     animation: shimmer 1.5s ease-in-out infinite;
@@ -477,31 +455,29 @@ body {
 }
 .card-logo .logo-fallback {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: var(--text-primary);
     background: var(--card-bg);
     border-radius: 50%;
 }
-
 @keyframes shimmer {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
 }
 
 .card-name {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     line-height: 1.3;
 }
 .card-desc {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-secondary);
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -511,24 +487,23 @@ body {
     max-width: 100%;
 }
 
-/* Star (favourite) */
 .card-star {
     position: absolute;
-    top: 10px;
-    right: 12px;
+    top: 8px;
+    right: 10px;
     background: none;
     border: none;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 1;
     color: var(--text-muted);
     cursor: pointer;
     transition: all 0.2s ease;
-    padding: 4px;
+    padding: 2px;
     z-index: 2;
     backdrop-filter: blur(4px);
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -550,7 +525,7 @@ body {
     100% { transform: scale(1); }
 }
 
-/* Loading overlay on card click */
+/* Loading overlay */
 .card-loader {
     position: absolute;
     inset: 0;
@@ -571,8 +546,8 @@ body {
     pointer-events: auto;
 }
 .card-loader .spinner {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: 3px solid transparent;
     border-top-color: var(--spinner-color);
@@ -597,43 +572,27 @@ body {
     animation: fadeInUp 0.4s ease;
 }
 
-/* ----- ANIMATIONS (global) ----- */
+/* ----- ANIMATIONS ----- */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes cardAppear {
-    from {
-        opacity: 0;
-        transform: translateY(16px) scale(0.96);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    from { opacity: 0; transform: translateY(16px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
-
 @keyframes popBadge {
     0% { transform: scale(0.8); }
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
 }
-
-/* Fade transition for re-render */
 .dashboard.updating .card {
     opacity: 0 !important;
     transform: translateY(10px) scale(0.96) !important;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Reduce motion */
+/* ----- REDUCED MOTION ----- */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -656,5 +615,8 @@ body {
     .dashboard.updating .card {
         opacity: 1 !important;
         transform: none !important;
+    }
+    .card:hover {
+        transform: translateY(-4px) scale(1.01) !important;
     }
 }
