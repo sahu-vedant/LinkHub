@@ -204,7 +204,7 @@ function handleCardClick(e) {
     setTimeout(() => {
         window.open(url, '_blank', 'noopener,noreferrer');
         setTimeout(() => { if (loader) loader.classList.remove('active'); }, 100);
-    }, 1500);
+    }, 700);
 }
 
 function smoothReRender() {
